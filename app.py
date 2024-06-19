@@ -11,6 +11,10 @@ my_api_key = os.getenv('MY_API_KEY')
 app = Flask(__name__)
 CORS(app) 
 
+@app.route('/')
+def index():
+    return "Welcome to the Flight API"
+
 def get_flight_details(api_key, from_city, to_city, outbound_date, return_date=None, currency="INR"):
     api_url = "https://serpapi.com/search"
     
